@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Is A Follower 
-// @namespace      http://swapped.cc
+// @namespace      http://swapped.cc/iip
 // @description    Adds an indicator to the Dribbble user's shots and profile pages to show if he/she is folowing you
 // @include        http://dribbble.com/*
 // @include        http://www.dribbble.com/*

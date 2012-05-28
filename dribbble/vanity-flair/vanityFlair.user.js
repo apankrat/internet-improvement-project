@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Vanity Flair
-// @namespace      http://swapped.cc
+// @namespace      http://swapped.cc/iip
 // @description    Shows current and highest rank of a shot on Dribble's Popular list
 // @include        http://dribbble.com/*
 // @include        http://www.dribbble.com/*
