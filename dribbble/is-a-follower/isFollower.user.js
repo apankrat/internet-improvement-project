@@ -5,8 +5,8 @@
 // @include        http://dribbble.com/*
 // @include        http://www.dribbble.com/*
 // @require        http://code.jquery.com/jquery-1.5.2.min.js
-// @require        https://raw.github.com/apankrat/assorted/master/javascript/dribbble/misc/gm-xhr.js
-// @require        https://raw.github.com/apankrat/assorted/master/javascript/dribbble/misc/jquery.tipsy-1.0.0a.js
+// @require        https://raw.github.com/apankrat/internet-improvement-project/master/_shared/js/gm-xhr.js
+// @require        https://raw.github.com/apankrat/internet-improvement-project/master/_shared/js/jquery.tipsy-1.0.0a.js
 // ==/UserScript==
 
 (function(){
