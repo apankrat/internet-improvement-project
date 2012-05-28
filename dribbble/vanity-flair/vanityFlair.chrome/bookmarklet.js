@@ -112,6 +112,7 @@
 
 	function main(argc, argv)
 	{
+console.log('vanityFlair');
 		/*
 		 *  check we are on the /shots/xxx page (and not rebounds)
 		 */
