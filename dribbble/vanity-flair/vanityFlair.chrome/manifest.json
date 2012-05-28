@@ -5,11 +5,11 @@
  "update_url": "https://raw.github.com/apankrat/internet-improvement-project/master/dribbble/vanity-flair/chrome/update.xml",
  "permissions": [
      "tabs",
-     "http://*.dribbble.com/*"
+     "http://api.swapped.cc/*"
  ],
  "content_scripts": [
    {
-     "matches": ["http://*.dribbble.com/*"],
+     "matches": ["http://api.swapped.cc/*"],
      "js":      ["jquery-1.5.2.min.js", "jquery.tipsy-1.0.0a.js", "bookmarklet.js"]
    }
  ],

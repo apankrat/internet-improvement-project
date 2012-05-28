@@ -134,8 +134,8 @@
 		/*
 		 *	don't bother with shots with 5 likes or less
 		 */
-		var likes = $('#like-section .fav-number a');
-
+		var likes = $('#like-section > div > a');
+console.log(likes);
 		if (likes.length == 0)
 		{
 			setRanking('<em>Below 100th</em>');
@@ -144,12 +144,13 @@
 
 		var re = /^([0-9]+)/;
 		var m = re.exec(likes.html());
+console.log(m);
 		if (m && m.length == 2 && m[1] < 6)
 		{
 			setRanking('<em>Below 100th</em>');
 			return;
 		}
-
+console.log('ajaxing...');
 		realAjaxCall('http://api.swapped.cc/dribbble/shots/' + shotId + '/rank?gm', processResponse);
 	}
 
