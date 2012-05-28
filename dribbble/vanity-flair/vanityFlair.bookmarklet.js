@@ -91,13 +91,19 @@ javascript:
 		if (info.rc == 200)
 		{
 			if (info.rank_highest == info.rank_current)
+			{
 				setRanking( '<em>Currently </em> ' + humanize(info.rank_current) );
+			}
 			else
 			if (info.rank_current != -1)
+			{
 				setRanking(humanize(info.rank_highest) + ' <em>highest &nbsp;/&nbsp; </em> ' +
 						   humanize(info.rank_current) + ' <em>now</em>');
+			}
 			else
+			{
 				setRanking(humanize(info.rank_highest) + ' <em>highest</em>');
+			}
 		}
 		else
 		if (info.rc == 404)

@@ -1,23 +1,16 @@
-// ==UserScript==
-// @name           Declutter Twitter
-// @namespace      http://swapped.cc
-// @description    Removes promoted tweets, "Who To Follow", "Trends" and the legalese
-// @include        http://twitter.com/*
-// @include        http://www.twitter.com/*
-// @include        https://twitter.com/*
-// @include        https://www.twitter.com/*
-// @require        http://code.jquery.com/jquery-1.7.1.min.js
-// ==/UserScript==
+javascript:
 
 (function(){
 
 	/*************************************************************
 	 *                                                           *
-	 *                     greasemonkey glue                     *
+	 *                     bookmarklet glue                      *
 	 *                                                           *
 	 *************************************************************/
-	
-	/* none required */
+
+	if (window.declutterTwitterInstalled)
+		return;
+	window.declutterTwitterInstalled = true;
 
 	/*************************************************************
 	 *                                                           *
@@ -45,3 +38,4 @@
 	setTimeout(declutterTwitter, 100);
 
 })();
+
