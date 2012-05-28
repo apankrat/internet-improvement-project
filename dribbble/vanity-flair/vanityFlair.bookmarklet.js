@@ -140,7 +140,7 @@ javascript:
 		/*
 		 *	don't bother with shots with 5 likes or less
 		 */
-		var likes = $('#like-section .fav-number a');
+		var likes = $('#like-section > div > a');
 
 		if (likes.length == 0)
 		{
