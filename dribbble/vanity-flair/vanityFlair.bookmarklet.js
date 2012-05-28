@@ -37,9 +37,9 @@ javascript:
 		var viewCount = $('div.meta-act.meta-act-views');
 
 		var html = 
-			'<div class="meta-act meta-act-views">' +
-			'	<span rel="tipsy" original-title="Rank on the Popular list">&nbsp;</span>' +
-			'	<span class="meta-act-link meta-views">' + left + '</span>' +
+			'<div class=\"meta-act meta-act-views\">' +
+			'	<span rel=\"tipsy\" original-title=\"Rank on the Popular list\">&nbsp;</span>' +
+			'	<span class=\"meta-act-link meta-views\">' + left + '</span>' +
 			'</div>';
 
 		viewCount.after(html);

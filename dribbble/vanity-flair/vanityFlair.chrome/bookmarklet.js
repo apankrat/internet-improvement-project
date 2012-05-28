@@ -150,7 +150,7 @@
 			return;
 		}
 
-		realAjaxCall('http://api.swapped.cc/dribbble/shots/' + shotId + '/rank?gm', processResponse);
+		realAjaxCall('http://api.swapped.cc/dribbble/shots/' + shotId + '/rank?ce', processResponse);
 	}
 
 	main();
