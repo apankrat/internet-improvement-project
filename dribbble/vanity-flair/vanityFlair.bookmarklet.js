@@ -140,7 +140,7 @@ javascript:
 		/*
 		 *	don't bother with shots with 5 likes or less
 		 */
-		var likes = $('#like-section .fav-number a').html();
+		var likes = $('#like-section .fav-number a');
 
 		if (likes.length == 0)
 		{
@@ -149,7 +149,7 @@ javascript:
 		}
 
 		var re = /^([0-9]+)/;
-		var m = re.exec(likes);
+		var m = re.exec(likes.html());
 		if (m && m.length == 2 && m[1] < 6)
 		{
 			setRanking('<em>Below 100th</em>');
