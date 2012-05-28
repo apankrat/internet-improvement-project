@@ -1,8 +1,8 @@
 {
  "name": "Is A Follower",
- "description": "Adds an indicator to the Dribbble user's profile and shots pages to show if he/she is folowing you",
- "homepage_url": "http://dribbble.com/shots/437222-Is-a-Follower",
- "update_url": "https://github.com/apankrat/assorted/tree/master/javascript/dribbble/chrome/isFollower/update.xml",
+ "description": "Adds an indicator to Dribbble user's profile and shots pages to show if he/she is folowing you",
+ "homepage_url": "http://swapped.cc/iip",
+ "update_url": "https://raw.github.com/apankrat/internet-improvement-project/master/dribbble/is-a-follower/chrome/update.xml",
  "permissions": [
      "tabs",
      "http://*.dribbble.com/*"
