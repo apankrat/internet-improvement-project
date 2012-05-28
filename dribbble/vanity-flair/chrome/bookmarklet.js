@@ -1,22 +1,10 @@
-// ==UserScript==
-// @name           Vanity Flair
-// @namespace      http://swapped.cc
-// @description    Shows current and highest rank of a shot on Dribble's Popular list
-// @include        http://dribbble.com/*
-// @include        http://www.dribbble.com/*
-// @require        http://code.jquery.com/jquery-1.5.2.min.js
-// @require        https://raw.github.com/apankrat/internet-improvement-project/master/_shared/js/gm-xhr.js
-// @require        https://raw.github.com/apankrat/internet-improvement-project/master/_shared/js/jquery.tipsy-1.0.0a.js
-// ==/UserScript==
-
 (function(){
 
 	/*************************************************************
 	 *                                                           *
-	 *                     greasemonkey glue                     *
+	 *                     bookmarklet glue                      *
 	 *                                                           *
 	 *************************************************************/
-	$.ajaxSetup({ xhr: function(){ return new GM_XHR; } });
 
 	var ajaxDataType = 'json';
 
@@ -156,3 +144,5 @@
 	main();
 
 })();
+
+

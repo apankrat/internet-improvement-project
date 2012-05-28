@@ -138,7 +138,11 @@ javascript:
 		var likes = $('#like-section .fav-number a').html();
 		var re = /^([0-9]+)/;
 		var m = re.exec(likes);
-		console.log(likes, m[1]);
+		if (m && m.length == 2 && m[1] < 6)
+		{
+			setRanking('<em>Not available</em>');
+			return;
+		}
 
 		realAjaxCall('http://api.swapped.cc/dribbble/shots/' + shotId + '/rank?gm', processResponse);
 	}
