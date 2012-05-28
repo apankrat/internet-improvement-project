@@ -1,0 +1,17 @@
+{
+ "name": "Is A Follower",
+ "description": "Adds an indicator to the Dribbble user's profile and shots pages to show if he/she is folowing you",
+ "homepage_url": "http://dribbble.com/shots/437222-Is-a-Follower",
+ "update_url": "https://github.com/apankrat/assorted/tree/master/javascript/dribbble/chrome/isFollower/update.xml",
+ "permissions": [
+     "tabs",
+     "http://*.dribbble.com/*"
+ ],
+ "content_scripts": [
+   {
+     "matches": ["http://*.dribbble.com/*"],
+     "js":      ["jquery-1.5.2.min.js", "jquery.tipsy-1.0.0a.js", "bookmarklet.js"]
+   }
+ ],
+ "version": "2.0"
+}
