@@ -123,24 +123,36 @@ javascript:
 		 */
 		var re = /^\/shots\/([0-9]+)-[^\/]+\/?$/;
 		var m = re.exec(window.location.pathname);
-
 		if (!m || m.length != 2)
 			return;
 
 		var shotId = m[1];
 
+		/*
+		 *
+		 */
 		if (shotId < 570000)
 		{
 			setRanking('<em>Not available</em>');
 			return;
 		}
 
+		/*
+		 *	don't bother with shots with 5 likes or less
+		 */
 		var likes = $('#like-section .fav-number a').html();
+
+		if (likes.length == 0)
+		{
+			setRanking('<em>Below 100th</em>');
+			return;
+		}
+
 		var re = /^([0-9]+)/;
 		var m = re.exec(likes);
 		if (m && m.length == 2 && m[1] < 6)
 		{
-			setRanking('<em>Not available</em>');
+			setRanking('<em>Below 100th</em>');
 			return;
 		}
 
