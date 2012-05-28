@@ -119,7 +119,7 @@ console.log('setting follower status to ' + status + ' ' + (progress ? progress 
 		var tooltip;
 		var bgColor;
 		var bgImage, overlay;
-		var imgBase = 'https://github.com/apankrat/assorted/raw/master/javascript/dribbble/misc/';
+		var imgBase = 'https://github.com/apankrat/internet-improvement-project/raw/master/dribbble/is-a-follower/misc/';
 		var tipsy = $(document).find('.tipsy-inner');
  
 		switch (status)
