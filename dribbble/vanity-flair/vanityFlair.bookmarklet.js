@@ -127,7 +127,7 @@ javascript:
 		/*
 		 *  check we are on the /shots/xxx page (and not rebounds)
 		 */
-		var re = /^\/shots\/([0-9]+)-[^\/]+\/?$/;
+		var re = /^\/shots\/([0-9]+)-[^\/]*\/?$/;
 		var m = re.exec(window.location.pathname);
 		if (!m || m.length != 2)
 			return;

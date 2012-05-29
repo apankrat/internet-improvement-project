@@ -415,7 +415,7 @@ console.log('followers now = ' + followersNow + ', was = ' + followers.length);
 		 *	see if it's user's shot page
 		 */
 		{
-			re = /^\/shots\/([0-9]+-[^\/]+)$/;
+			re = /^\/shots\/([0-9]+-[^\/]*)$/;
 			if (! re.exec(window.location.pathname))
 				return;
 
