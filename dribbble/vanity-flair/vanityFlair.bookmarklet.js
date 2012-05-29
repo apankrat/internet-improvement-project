@@ -77,7 +77,7 @@ javascript:
 
 	function humanize(num)
 	{
-		if (num / 10 == 1)
+		if (10 < num && num < 14)
 			return num + 'th';
 
 		switch (num % 10)
