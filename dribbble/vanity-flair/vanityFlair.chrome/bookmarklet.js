@@ -71,6 +71,9 @@
 
 	function humanize(num)
 	{
+		if (num / 10 == 1)
+			return num + 'th';
+
 		switch (num % 10)
 		{
 		case 1: return num + 'st';
