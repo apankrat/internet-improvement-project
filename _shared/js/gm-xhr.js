@@ -18,12 +18,12 @@ function GM_XHR() {
 
     this.getAllResponseHeaders = function(name) {
       if (this.readyState!=4) return "";
-      return this.responseHeaders;
+      return this.rspHeaders;
     };
 
     this.getResponseHeader = function(name) {
       var regexp = new RegExp('^'+name+': (.*)$','im');
-      var match = regexp.exec(this.responseHeaders);
+      var match = regexp.exec(this.rspHeaders);
       if (match) { return match[1]; }
       return '';
     };
@@ -51,8 +51,18 @@ function GM_XHR() {
             headers: this.headers,
             data: this.data,
             onload: function(rsp) {
+
+    console.log(
+      rsp.status,
+      rsp.statusText,
+      rsp.readyState,
+      rsp.rspHeaders,
+      rsp.rspText,
+      rsp.finalUrl,
+      rsp.rspXML);
+
                 // Populate wrapper object with returned data
-                // including the Greasemonkey specific "responseHeaders"
+                // including the Greasemonkey specific "rspHeaders"
                 for (k in rsp) {
                     that[k] = rsp[k];
                 }
