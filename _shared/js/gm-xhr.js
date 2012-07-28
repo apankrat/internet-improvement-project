@@ -51,9 +51,6 @@ function GM_XHR() {
             headers: this.headers,
             data: this.data,
             onload: function(rsp) {
-
- console.log(rsp);
-
                 // Populate wrapper object with returned data
                 // including the Greasemonkey specific "rspHeaders"
                 for (k in rsp) {
@@ -63,7 +60,6 @@ function GM_XHR() {
                 that.onreadystatechange();
             },
             onerror: function(rsp) {
- console.log(rsp);
                 for (k in rsp) {
                     that[k] = rsp[k];
                 }
