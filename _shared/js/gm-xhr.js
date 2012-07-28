@@ -52,14 +52,7 @@ function GM_XHR() {
             data: this.data,
             onload: function(rsp) {
 
-    console.log(
-      rsp.status,
-      rsp.statusText,
-      rsp.readyState,
-      rsp.rspHeaders,
-      rsp.rspText,
-      rsp.finalUrl,
-      rsp.rspXML);
+ console.log(rsp);
 
                 // Populate wrapper object with returned data
                 // including the Greasemonkey specific "rspHeaders"
@@ -70,6 +63,7 @@ function GM_XHR() {
                 that.onreadystatechange();
             },
             onerror: function(rsp) {
+ console.log(rsp);
                 for (k in rsp) {
                     that[k] = rsp[k];
                 }
