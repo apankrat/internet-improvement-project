@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name           Decruftifier for HN
+// @name           Selectivity for HN
 // @namespace      http://swapped.cc/iip
-// @description    Adds "hide" links to HN index pages, allowing to remove unwanted items from the index and causing lower-ranked stories to be pulled up from the next page
+// @description    Adds a "hide" option to the stories on the Hacker News front page.
 // @include        http://news.ycombinator.com/*
 // @require        http://code.jquery.com/jquery-1.5.2.min.js
 // @require        https://raw.github.com/apankrat/internet-improvement-project/master/_shared/js/gm-xhr.js
@@ -445,7 +445,7 @@
 		 */
 		if (typeof(window.localStorage) == 'undefined')
 		{
-			console.log('Decruftifier for HN - not running, localStorage is unavailable (which is odd)');
+			console.log('Selectivity for HN - not running, localStorage is unavailable (which is odd)');
 			return;
 		}
 
@@ -455,7 +455,7 @@
 		var tables = $('center > table > tbody > tr table');
 		if (tables.length != 3)
 		{
-			console.log('Decruftifier for HN - not running, not an index page');
+			console.log('Selectivity for HN - not running, not an index page');
 			return;
 		}
 
@@ -464,11 +464,11 @@
 
 		if (! re.exec(id))
 		{
-			console.log('Decruftifier for HN - not running, not an index page');
+			console.log('Selectivity for HN - not running, not an index page');
 			return;
 		}
 
-		console.log('Decruftifier for HN - active');
+		console.log('Selectivity for HN - active');
 
 
 		/*

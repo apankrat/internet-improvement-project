@@ -1,0 +1,17 @@
+{
+ "name": "Selectivity for HN",
+ "description": "Adds a 'hide' option to the stories on the Hacker News front page.",
+ "homepage_url": "http://swapped.cc/iip",
+ "update_url": "https://raw.github.com/apankrat/internet-improvement-project/master/hn/selectivity.chrome/update.xml",
+ "permissions": [
+     "tabs",
+     "http://news.ycombinator.com/*"
+ ],
+ "content_scripts": [
+   {
+     "matches": ["http://news.ycombinator.com/*"],
+     "js":      ["jquery-1.5.2.min.js", "jquery.color.min.js", "bookmarklet.js"]
+   }
+ ],
+ "version": "1.0"
+}

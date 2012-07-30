@@ -429,7 +429,7 @@
 		 */
 		if (typeof(window.localStorage) == 'undefined')
 		{
-			console.log('Decruftifier for HN - not running, localStorage is unavailable (which is odd)');
+			console.log('Selectivity for HN - not running, localStorage is unavailable (which is odd)');
 			return;
 		}
 
@@ -439,7 +439,7 @@
 		var tables = $('center > table > tbody > tr table');
 		if (tables.length != 3)
 		{
-			console.log('Decruftifier for HN - not running, not an index page');
+			console.log('Selectivity for HN - not running, not an index page');
 			return;
 		}
 
@@ -448,11 +448,11 @@
 
 		if (! re.exec(id))
 		{
-			console.log('Decruftifier for HN - not running, not an index page');
+			console.log('Selectivity for HN - not running, not an index page');
 			return;
 		}
 
-		console.log('Decruftifier for HN - active');
+		console.log('Selectivity for HN - active');
 
 
 		/*
