@@ -222,6 +222,7 @@
 			tr.animate({ opacity: 0 }, function(){
 				if (once) { once = false; insertPlaceholder(); }
 				$(this).find('td').hide();
+				td.find('a.hnx-hide').html('show');
 				$(this).animate({ height: '0px' }, function(){
 					$(this).hide();
 				});
@@ -230,9 +231,8 @@
 		else
 		{
 			tr.animate({ opacity: hiddenOpacity, backgroundColor: hiddenBackColor });
+			td.find('a.hnx-hide').html('show');
 		}
-
-		td.find('a.hnx-hide').html('show');
 	}
 
 	function showItem(td)
