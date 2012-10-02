@@ -13,5 +13,5 @@
      "js":      ["jquery-1.5.2.min.js", "jquery.tipsy-1.0.0a.js", "bookmarklet.js"]
    }
  ],
- "version": "2.1"
+ "version": "2.3"
 }

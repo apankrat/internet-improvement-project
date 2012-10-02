@@ -411,9 +411,8 @@ console.log('followers now = ' + followersNow + ', was = ' + followers.length);
 			/*
 			 *	double check (filter out /shots, /popular, etc)
 			 */
-			if ($('div.full img.photo').length != 1)
+			if ($('div.full div.profile').length != 1)
 				return;
-
 			profile = true;
 		}
 		else
