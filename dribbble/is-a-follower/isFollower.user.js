@@ -54,7 +54,7 @@
 	function addFollowerStatus()
 	{
 		var link = $('div.full .follow-prompt a');
-		var info = link.parent().parent();
+		var info = link.parent();
 		var radius;
 
 		info.after('<div>&nbsp;</div>');
@@ -213,9 +213,12 @@ console.log('setting follower status to ' + status + ' ' + (progress ? progress 
 	 */
 	var apiCalls = 0;
 	var nextCall;
+	var fastAjax;
 
 	function realAjaxCall(url, cb)
 	{
+		localStorage.setItem('last_ajax_call', +new Date());
+
 		$.ajax({
 			url:      url,
 			dataType: ajaxDataType,
@@ -234,9 +237,16 @@ console.log('setting follower status to ' + status + ' ' + (progress ? progress 
 		 *	make next 30 calls at least 250 ms apart,
 		 *	space the rest in 1 second intervals
 		 */
-		apiCalls++;
-		nextCall = now + ((apiCalls < 30) ? 0 :
-		                 ((apiCalls < 15) ? 250 : 1000));
+		if (fastAjax)
+		{
+			apiCalls++;
+			nextCall = now + ((apiCalls < 30) ? 0 :
+		                         ((apiCalls < 15) ? 250 : 1000));
+		}
+		else
+		{
+			nextCall = now + 1000;
+		}
 
 		if (now < noSooner)
 		{
@@ -398,7 +408,7 @@ console.log('followers now = ' + followersNow + ', was = ' + followers.length);
 		myname = fromUrl( $('#header #t-profile a').attr('href') );
 		if (! myname)
 		{
-			console.log("can't find myname");
+console.log("can't find myname");
 			return;
 		}
 
@@ -430,14 +440,14 @@ console.log('followers now = ' + followersNow + ', was = ' + followers.length);
 			username = fromUrl( $('.shot-byline-user a').attr('href') );
 			if (! username)
 			{
-				console.log("can't find username");
+console.log("can't find username");
 				return;
 			}
 
 			profile = false;
 		}
 
-		console.log("self: " + myname + ", user: " + username);
+console.log("self: " + myname + ", user: " + username);
 
 		/*
 		 *	ignore our own profile page
@@ -455,6 +465,17 @@ console.log('followers now = ' + followersNow + ', was = ' + followers.length);
 			catch(x) { followers = null; }
 		}
 		followers = followers || new Array();
+
+		/*
+		 *  first page to start updating gets an accelerated
+		 *  download schedule, others pull at 1 req/sec
+		 */
+		var lastAjaxCall;
+
+		lastAjaxCall  = localStorage.getItem('last_ajax_call');
+		fastAjax = lastAjaxCall ? (lastAjaxCall + 60 < +new Date()) : true;
+
+console.log(fastAjax ? 'Accelerated update schedule' : 'Regular update schedule');
 
 		/*
 		 *	oki-doki, initiate the callback gallore by checking

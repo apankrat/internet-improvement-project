@@ -1,4 +1,5 @@
 {
+ "manifest_version": 2,
  "name": "Is A Follower",
  "description": "Adds an indicator to Dribbble user's profile and shots pages to show if he/she is folowing you",
  "homepage_url": "http://swapped.cc/iip",
@@ -13,5 +14,5 @@
      "js":      ["jquery-1.5.2.min.js", "jquery.tipsy-1.0.0a.js", "bookmarklet.js"]
    }
  ],
- "version": "2.3"
+ "version": "2.4"
 }
