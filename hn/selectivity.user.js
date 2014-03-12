@@ -3,6 +3,7 @@
 // @namespace      http://swapped.cc/iip
 // @description    Adds a "hide" option to the stories on the Hacker News front page.
 // @include        http://news.ycombinator.com/*
+// @include        https://news.ycombinator.com/*
 // @require        http://code.jquery.com/jquery-1.5.2.min.js
 // @require        https://raw.github.com/apankrat/internet-improvement-project/master/_shared/js/gm-xhr.js
 // @require        https://raw.github.com/apankrat/internet-improvement-project/master/_shared/js/jquery.color.min.js
