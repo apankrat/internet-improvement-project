@@ -17,7 +17,10 @@ function declutterTwitter()
 	  $("div.component[data-component-term='user_recommendations'], " +
 	    "div.component[data-component-term='trends'], " +
 	    "div.component[data-component-term='footer'], " +
+	    "div.recent-followers-module, " +
 	    "div.promoted-tweet, " + 
+	    "div.module.trends," + 
+	    "div.promptbird," +
 	    "div.wtf-module, " +
 	    "div.site-footer, " +
 	    "div#js-empty-timeline-recommendations-module-hook");
