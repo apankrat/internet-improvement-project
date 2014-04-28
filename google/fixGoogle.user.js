@@ -8,22 +8,29 @@
 // @require        https://code.jquery.com/jquery-1.7.1.min.js
 // ==/UserScript==
 
+var busy = 0;
+
 function fix_google()
 {
+	busy++;
 	$('a').each(function(){ $(this).attr('onmousedown',null); });
-	$('#res .r a').css({ 'font-size': '16px', 'text-decoration': 'underline' });
+	$('#res .r a, #newsbox a').css({ 'font-size': '16px', 'text-decoration': 'underline' });
+	busy--;
 }
 
-var fix_timer = null;
+var timer = null;
 
 function fix_proxy(ev)
 {
-	if (typeof fix_timer == "number")
+	if (busy)
+		return; // don't react to own's changes
+
+	if (typeof timer == "number")
 	{
-        	clearTimeout(fix_timer);
-		fix_timer = null;
+        	clearTimeout(timer);
+		timer = null;
 	}
-	fix_timer = setTimeout(fix_google, 333);
+	timer = setTimeout(fix_google, 333);
 }
 
 $("body").bind("DOMSubtreeModified", fix_proxy);
