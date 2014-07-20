@@ -36,7 +36,7 @@ javascript:
 		    "div.ProfilePreviewBanner, " + 
 		    "div.Footer.roaming-module" );
 
-		if (divs.remove() != 0) burst = 30;
+		if (divs.remove().length != 0) burst = 30;
 		else
 		if (burst) burst--;
 
