@@ -21,14 +21,23 @@ javascript:
 
 	function declutterTwitter()
 	{
-		var divs = 
-		  $("div.component[data-component-term='user_recommendations'], " +
-			"div.component[data-component-term='trends'], " +
-			"div.component[data-component-term='footer'], " +
-			"div.promoted-tweet, " + 
-			"div#js-empty-timeline-recommendations-module-hook");
+		var divs =
+		  $("div.component[data-component-term='user_recommendations']," +
+		    "div.component[data-component-term='trends']," +
+		    "div.recent-followers-module," +
+		    "div.promoted-tweet," +
+		    "div.module.trends," +
+		    "div.module.Footer," +
+		    "div.promptbird," +
+		    "div.wtf-module," +
+		    "div.site-footer," +
+		    "div#js-empty-timeline-recommendations-module-hook," +
+		    "li[data-item-type='who_to_follow_entry']");
 
-		if (divs.remove() != 0) burst = 30;
+		divs.hide();
+		document.oncontextmenu = null;
+
+		if (divs.length) burst = 30;
 		else
 		if (burst) burst--;
 
