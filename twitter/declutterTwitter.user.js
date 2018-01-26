@@ -15,15 +15,17 @@ function declutterTwitter()
 {
 	var divs = 
 	  $("div.component[data-component-term='user_recommendations'], " +
-	    "div.component[data-component-term='trends'], " +
+      "div.component[data-component-term='trends'], " +
 	    "div[data-component-context='generic_activity_MagicRecLikedTweetWithOthers'], " +
-	    "div.promoted-tweet, " + 
-	    "div.module.trends," + 
-	    "div.module.Footer," + 
+	    "div[data-component-context='generic_activity_MagicRecLikedAPhotoWithOthers'], " +
+	    "div.recent-followers-module, " +
+	    "div.promoted-tweet, " +
+	    "div.module.trends," +
+	    "div.module.Footer," +
 	    "div.promptbird," +
 	    "div.wtf-module, " +
 	    "div.site-footer, " +
-	    "div.module.trends, " + 
+      "div.module.trends, " +
 	    "div#js-empty-timeline-recommendations-module-hook," +
 			"div.ReonboardingCallout," +
 		  "li[data-item-type='who_to_follow_entry']," +
@@ -31,7 +33,7 @@ function declutterTwitter()
 		  "div.SidebarCommonModules");
 
 	divs.hide();
-	
+  
 	if (divs.length) burst = 30;
 	else
 	if (burst) burst--;
