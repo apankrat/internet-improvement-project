@@ -18,6 +18,7 @@ function declutterTwitter()
 	    "div.component[data-component-term='trends'], " +
 	    "div[data-component-context='generic_activity_MagicRecLikedTweetWithOthers'], " +
 	    "div[data-component-context='generic_activity_MagicRecLikedAPhotoWithOthers'], " +
+	    "div[data-component-context='generic_activity_MagicRecRetweetedAPhotoWithOthers'], " +
 	    "div.ProfileUserList--socialProof, " +
 	    "div.recent-followers-module, " +
 	    "div.promoted-tweet, " +
