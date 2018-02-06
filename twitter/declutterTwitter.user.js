@@ -16,9 +16,7 @@ function declutterTwitter()
 	var divs = 
 	  $("div.component[data-component-term='user_recommendations'], " +
 	    "div.component[data-component-term='trends'], " +
-	    "div[data-component-context='generic_activity_MagicRecLikedTweetWithOthers'], " +
-	    "div[data-component-context='generic_activity_MagicRecLikedAPhotoWithOthers'], " +
-	    "div[data-component-context='generic_activity_MagicRecRetweetedAPhotoWithOthers'], " +
+	    "div[data-component-context^='generic_activity_MagicRec'], " +
 	    "div.ProfileUserList--socialProof, " +
 	    "div.recent-followers-module, " +
 	    "div.promoted-tweet, " +
