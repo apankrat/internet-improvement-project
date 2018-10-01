@@ -8,5 +8,8 @@
 // @include        https://www.minimalissimo.com/*
 // ==/UserScript==
 
-var c = document.getElementsByClassName('size-1of2');
-for (var i=0; i<c.length; i++) c[i].className += ' size-1of1';
+
+setTimeout(function(){
+	var c = document.getElementsByClassName('size-1of2');
+	for (var i=0; i<c.length; i++) c[i].className += ' size-1of1';
+}, 1000);
