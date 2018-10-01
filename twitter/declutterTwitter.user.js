@@ -24,8 +24,8 @@ function declutterTwitter()
 	divs = divs.add(
 	  "div.component[data-component-term='user_recommendations'], " +
 	  "div.component[data-component-term='trends'], " +
-    "div[data-component-context^='generic_activity_MagicRec'], " +
-    "div[data-item-type='who_to_follow_entry'], " +
+          "div[data-component-context^='generic_activity_MagicRec'], " +
+          "div[data-item-type='who_to_follow_entry'], " +
 	  "div.ProfileUserList--socialProof, " +
 	  "div.recent-followers-module, " +
 	  "div.promoted-tweet, " +
@@ -37,20 +37,20 @@ function declutterTwitter()
 	  "div.module.trends, " +
 	  "div#js-empty-timeline-recommendations-module-hook," +
 	  "div.ReonboardingCallout," +
-    "li[data-item-type='who_to_follow_entry']," +
+          "li[data-item-type='who_to_follow_entry']," +
 	  "li[data-item-type='recap_entry']," +
 	  "div.SidebarCommonModules"
   );
   
   divs.hide();
   
-	if (divs.length) burst = 30;
-	else
-	if (burst) burst--;
+  if (divs.length) burst = 30;
+  else
+  if (burst) burst--;
 	
-	document.oncontextmenu = null;
+  document.oncontextmenu = null;
 
-	setTimeout(declutterTwitter, burst ? 100 : 1000);
+  setTimeout(declutterTwitter, burst ? 100 : 1000);
 }
 
 declutterTwitter();
