@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Declutter Twitter
 // @namespace      http://swapped.cc
-// @description    Removes "Who To Follow", "Trends" and the legalese
+// @description    Removes junk elements from Twitter pages
 // @include        http://twitter.com/*
 // @include        http://www.twitter.com/*
 // @include        https://twitter.com/*
@@ -13,26 +13,36 @@ var burst = 30;
 
 function declutterTwitter()
 {
-	var divs = 
-	  $("div.component[data-component-term='user_recommendations'], " +
-	    "div.component[data-component-term='trends'], " +
-	    "div[data-component-context^='generic_activity_MagicRec'], " +
-	    "div.ProfileUserList--socialProof, " +
-	    "div.recent-followers-module, " +
-	    "div.promoted-tweet, " +
-	    "div.module.trends," +
-	    "div.module.Footer," +
-	    "div.promptbird," +
-	    "div.wtf-module, " +
-	    "div.site-footer, " +
-	    "div.module.trends, " +
-	    "div#js-empty-timeline-recommendations-module-hook," +
-	    "div.ReonboardingCallout," +
-	    "li[data-item-type='who_to_follow_entry']," +
-	    "li[data-item-type='recap_entry']," +
-	    "div.SidebarCommonModules");
-
-	divs.hide();
+  var divs;
+  
+  divs = $(
+    "div.tweet > div.context > div.tweet-context > span.Icon--heartBadge"
+  );
+  
+  divs = divs.parent().parent().parent();
+    
+	divs = divs.add(
+	  "div.component[data-component-term='user_recommendations'], " +
+	  "div.component[data-component-term='trends'], " +
+    "div[data-component-context^='generic_activity_MagicRec'], " +
+    "div[data-item-type='who_to_follow_entry'], " +
+	  "div.ProfileUserList--socialProof, " +
+	  "div.recent-followers-module, " +
+	  "div.promoted-tweet, " +
+	  "div.module.trends," +
+	  "div.module.Footer," +
+	  "div.promptbird," +
+	  "div.wtf-module, " +
+	  "div.site-footer, " +
+	  "div.module.trends, " +
+	  "div#js-empty-timeline-recommendations-module-hook," +
+	  "div.ReonboardingCallout," +
+    "li[data-item-type='who_to_follow_entry']," +
+	  "li[data-item-type='recap_entry']," +
+	  "div.SidebarCommonModules"
+  );
+  
+  divs.hide();
   
 	if (divs.length) burst = 30;
 	else
