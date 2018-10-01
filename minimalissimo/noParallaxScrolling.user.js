@@ -11,5 +11,9 @@
 
 setTimeout(function(){
 	var c = document.getElementsByClassName('size-1of2');
-	for (var i=0; i<c.length; i++) c[i].className += ' size-1of1';
+	for (var i=0; i<c.length; i++)
+	{
+		c[i].className += ' size-1of1';
+		c[i].removeAttribute('style');    // transform: ...
+	}
 }, 1000);
