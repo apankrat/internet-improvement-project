@@ -19,25 +19,26 @@ function inject(callback)
 
 function untrack()
 {
-  function unbind()
-  {
-    $('a').off('mousedown');
-  }
+	function unbind() { $('a').off('mousedown'); }
 
-  setInterval(unbind, 1000);
-  unbind();
+	setInterval(unbind, 1000);
+	unbind();
 
-  var sendWas = XMLHttpRequest.prototype.send;
-  XMLHttpRequest.prototype.send = function(body)
-  {
-        if (body.search('event_type'))
-        {
-          console.log('gm/untracker - blocked, event_type');
-          return;
-        }
+	$.ajaxSetup({
+		beforeSend: function (xhr,settings)
+		{
 
-        sendWas.call(this, body);
-  };
+		        if (typeof settings.data != 'undefined' &&
+			    settings.data.search('event_type'))
+			{
+				console.log('block - ' + settings.url);
+				return false;
+			}
+
+			console.log('pass  - ' + settings.url);
+			return true;
+		}
+	});
 }
 
 inject( untrack );
