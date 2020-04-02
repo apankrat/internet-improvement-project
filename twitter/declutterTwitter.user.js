@@ -13,19 +13,19 @@ var burst = 30;
 
 function declutterTwitter()
 {
-  var divs;
+	var divs;
   
-  divs = $(
-    "div.tweet > div.context > div.tweet-context > span.Icon--heartBadge"
-  );
+	divs = $(
+	  "div.tweet > div.context > div.tweet-context > span.Icon--heartBadge"
+	);
   
-  divs = divs.parent().parent().parent();
+	divs = divs.parent().parent().parent();
     
 	divs = divs.add(
 	  "div.component[data-component-term='user_recommendations'], " +
 	  "div.component[data-component-term='trends'], " +
-          "div[data-component-context^='generic_activity_MagicRec'], " +
-          "div[data-item-type='who_to_follow_entry'], " +
+	  "div[data-component-context^='generic_activity_MagicRec'], " +
+	  "div[data-item-type='who_to_follow_entry'], " +
 	  "div.ProfileUserList--socialProof, " +
 	  "div.recent-followers-module, " +
 	  "div.promoted-tweet, " +
@@ -37,20 +37,35 @@ function declutterTwitter()
 	  "div.module.trends, " +
 	  "div#js-empty-timeline-recommendations-module-hook," +
 	  "div.ReonboardingCallout," +
-          "li[data-item-type='who_to_follow_entry']," +
+	  "li[data-item-type='who_to_follow_entry']," +
 	  "li[data-item-type='recap_entry']," +
-	  "div.SidebarCommonModules"
-  );
-  
-  divs.hide();
-  
-  if (divs.length) burst = 30;
-  else
-  if (burst) burst--;
-	
-  document.oncontextmenu = null;
+	  "div.SidebarCommonModules," +
+	  "div[aria-label='Timeline: Trending now']," +
+	  "article[aria-labelledby='tweet-promoted-label']"
+	);
 
-  setTimeout(declutterTwitter, burst ? 100 : 1000);
+	hmmm = $(
+	  "aside[aria-label='Who to follow']," +
+	  "nav[aria-label='Footer'], " +
+	  "div[data-testid='placementTracking']"
+	);
+  
+	divs = divs.add(hmmm.parent());
+  
+	if (divs.length)
+	{
+		divs.hide();
+		console.log("Removed " + divs.length + " junk item(s)");
+		burst = 30;
+	}
+	else
+	{
+		if (burst) burst--;
+	}
+	
+	document.oncontextmenu = null;
+
+	setTimeout(declutterTwitter, burst ? 100 : 1000);
 }
 
 declutterTwitter();
