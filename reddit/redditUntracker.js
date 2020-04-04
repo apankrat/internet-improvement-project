@@ -27,18 +27,17 @@ function untrack()
 	$.ajaxSetup({
 		beforeSend: function (xhr,settings)
 		{
-
-		        if (typeof settings.data != 'undefined' &&
-			    settings.data.search('event_type'))
+			if (typeof settings.data != 'undefined' &&
+			    settings.data.search('event_type') != -1)
 			{
 				console.log('block - ' + settings.url);
 				return false;
 			}
-
+        
 			console.log('pass  - ' + settings.url);
 			return true;
 		}
-	});
+	});  
 }
 
 inject( untrack );
