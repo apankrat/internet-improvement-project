@@ -14,13 +14,13 @@ var burst = 30;
 function declutterTwitter()
 {
 	var divs;
-  
+
 	divs = $(
 	  "div.tweet > div.context > div.tweet-context > span.Icon--heartBadge"
 	);
-  
+
 	divs = divs.parent().parent().parent();
-    
+
 	divs = divs.add(
 	  "div.component[data-component-term='user_recommendations'], " +
 	  "div.component[data-component-term='trends'], " +
@@ -41,22 +41,35 @@ function declutterTwitter()
 	  "li[data-item-type='recap_entry']," +
 	  "div.SidebarCommonModules," +
 	  "div[aria-label='Timeline: Trending now']," +
-	  "article[aria-labelledby='tweet-promoted-label']"
+	  "article[aria-labelledby='tweet-promoted-label']," +
+	  "aside[aria-label='Relevant people']"
 	);
 
 	hmmm = $(
 	  "aside[aria-label='Who to follow']," +
-	  "nav[aria-label='Footer'], " +
-	  "div[data-testid='placementTracking']"
+	  "nav[aria-label='Footer']"
 	);
   
 	divs = divs.add(hmmm.parent());
   
 	if (divs.length)
 	{
-		divs.hide();
-		console.log("Removed " + divs.length + " junk item(s)");
-		burst = 30;
+		var hidden = 0;
+
+		divs.each(function(){
+			var $div = $(this);
+			if ($div.css('display') != 'none')
+			{
+				$div.hide();
+				hidden++;
+			}
+		});
+
+		if (hidden)
+		{
+			console.log( (+ new Date()) + " | Removed " + hidden + " junk item(s)");
+			burst = 30;
+		}
 	}
 	else
 	{
